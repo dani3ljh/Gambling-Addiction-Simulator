@@ -1,6 +1,8 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://4ksh0vv2vtfu"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://4ksh0vv2vtfu"]
 
 [ext_resource type="Texture2D" uid="uid://caaxod7sb7ykj" path="res://Sprites/icon.png" id="1"]
 
 [resource]
 albedo_texture = ExtResource("1")
+uv1_triplanar = true
+uv1_world_triplanar = true
