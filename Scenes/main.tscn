@@ -39,6 +39,7 @@ shadow_enabled = true
 environment = SubResource("Environment_rgh2o")
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1539651646]
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=162455451]
 shape = SubResource("WorldBoundaryShape3D_adp6s")
@@ -72,9 +73,11 @@ mesh = SubResource("BoxMesh_mqvok")
 
 [node name="Player" parent="." unique_id=777310218 instance=ExtResource("2_idj7w")]
 transform = Transform3D(-0.998245, 0, -0.059219178, 0, 1, 0, 0.059219178, 0, -0.998245, 0, 1, 0)
+air_control = 20.0
 
 [node name="Slot Machine" parent="." unique_id=1034599414 instance=ExtResource("3_kln2b")]
-transform = Transform3D(0.354, 0, 0, 0, 0.354, 0, 0, 0, 0.354, -10.9221525, 0.39389792, 0.4203725)
+transform = Transform3D(0.354, 0, 0, 0, 0.354, 0, 0, 0, 0.354, -8.454871, 2.5627596, -8.010128)
+metadata/_edit_group_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Slot Machine" unique_id=827714336]
 
