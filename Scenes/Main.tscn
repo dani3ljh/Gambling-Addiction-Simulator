@@ -2,6 +2,7 @@
 
 [ext_resource type="Material" uid="uid://4ksh0vv2vtfu" path="res://Materials/floor_material.tres" id="1"]
 [ext_resource type="PackedScene" uid="uid://dil1aovsx7tof" path="res://Scenes/player.tscn" id="2_idj7w"]
+[ext_resource type="PackedScene" uid="uid://oab5huchnm8q" path="res://Models/Slot Machine.glb" id="3_kln2b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_idj7w"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -24,6 +25,9 @@ orientation = 1
 size = Vector3(7.921827, 2.1798935, 5.350606)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mqvok"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mqvok"]
+size = Vector3(2.774475, 6.8484497, 3.8253326)
 
 [node name="Main" type="Node3D" unique_id=1729802106]
 
@@ -68,3 +72,12 @@ mesh = SubResource("BoxMesh_mqvok")
 
 [node name="Player" parent="." unique_id=777310218 instance=ExtResource("2_idj7w")]
 transform = Transform3D(-0.998245, 0, -0.059219178, 0, 1, 0, 0.059219178, 0, -0.998245, 0, 1, 0)
+
+[node name="Slot Machine" parent="." unique_id=1034599414 instance=ExtResource("3_kln2b")]
+transform = Transform3D(0.354, 0, 0, 0, 0.354, 0, 0, 0, 0.354, -10.9221525, 0.39389792, 0.4203725)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Slot Machine" unique_id=827714336]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Slot Machine/StaticBody3D" unique_id=2125882507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00015640259, 2.342682, -0.5335927)
+shape = SubResource("BoxShape3D_mqvok")
