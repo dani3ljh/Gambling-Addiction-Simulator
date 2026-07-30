@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d36m4st77n3g0"]
+
+[ext_resource type="Texture2D" uid="uid://7rpnvic0y2hc" path="res://Sprites/Slot Machine/slot-symbol4.png" id="1_jvkc1"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_jvkc1")
