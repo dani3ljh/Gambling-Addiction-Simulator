@@ -7,9 +7,10 @@
 [ext_resource type="Material" uid="uid://cng7hwvplram2" path="res://Materials/Slot Machine/slot_material2.tres" id="4_ab6dg"]
 [ext_resource type="Material" uid="uid://dptw8ri0f30fp" path="res://Materials/Slot Machine/slot_material3.tres" id="5_33385"]
 [ext_resource type="Material" uid="uid://d36m4st77n3g0" path="res://Materials/Slot Machine/slot_material4.tres" id="6_pyjcy"]
+[ext_resource type="PackedScene" uid="uid://b80qwne03ptlk" path="res://Scenes/slot_machine_arm.tscn" id="8_pxobf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bj4t2"]
-size = Vector3(5.1950493, 6.8705444, 5.782078)
+size = Vector3(5.1950493, 6.8705444, 6.066641)
 
 [sub_resource type="QuadMesh" id="QuadMesh_20cm6"]
 size = Vector2(0.45, 0.755)
@@ -24,7 +25,7 @@ script = ExtResource("2_pyjcy")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=425771553]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.531311e-05, 3.43161, 0.0041828156)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.531311e-05, 3.43161, -0.13809872)
 shape = SubResource("BoxShape3D_bj4t2")
 
 [node name="Cube" parent="." index="1" unique_id=1367628041]
@@ -167,3 +168,6 @@ mesh = SubResource("QuadMesh_20cm6")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interact" index="0" unique_id=513056321]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02418518, 5.3031616, 0.32958984)
 shape = SubResource("BoxShape3D_mqvok")
+
+[node name="Slot Machine Arm" parent="." index="6" unique_id=2020385602 instance=ExtResource("8_pxobf")]
+transform = Transform3D(-7.7987625e-09, -0.17841488, 0, 0.17841488, -7.7987625e-09, 0, 0, 0, 0.17841488, 0, 5.0905232, -2.0873213)

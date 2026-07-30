@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b80qwne03ptlk"]
+
+[ext_resource type="PackedScene" uid="uid://bpy2p60a4bmyt" path="res://Models/Slot Machine Arm.glb" id="1_kjfgw"]
+[ext_resource type="Material" uid="uid://ja4t2j0ra7nt" path="res://Materials/Slot Machine/slot_machine_handle.tres" id="2_8oiyp"]
+
+[node name="Slot Machine Arm" unique_id=2020385602 instance=ExtResource("1_kjfgw")]
+transform = Transform3D(0.17841488, 0, 0, 0, 0.17841488, 0, 0, 0, 0.17841488, 0, 0, 0)
+
+[node name="Icosphere" parent="." index="1" unique_id=1314543554]
+material_override = ExtResource("2_8oiyp")
