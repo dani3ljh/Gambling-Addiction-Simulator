@@ -70,8 +70,7 @@ transform = Transform3D(7.921827, 0, 0, 0, 2.1798935, 0, 0, 0, 5.350606, 0, 0, 0
 mesh = SubResource("BoxMesh_mqvok")
 
 [node name="Player" parent="." unique_id=777310218 instance=ExtResource("2_idj7w")]
-transform = Transform3D(-0.9982398, 0, -0.059306283, 0, 1, 0, 0.059306283, 0, -0.9982398, 0, 1, 0)
-air_control = 20.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Slot Machine" parent="." unique_id=1946949609 instance=ExtResource("3_8gbba")]
 transform = Transform3D(0.36373574, 0, 0, 0, 0.36373574, 0, 0, 0, 0.36373574, -8.045744, 2.1812258, -8.177565)

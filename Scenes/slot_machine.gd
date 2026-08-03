@@ -1,12 +1,13 @@
 extends Node3D
 
-@onready var slot1 = $Slot1
-@onready var slot2 = $Slot2
-@onready var slot3 = $Slot3
+@onready var slot1: Node3D = $Slot1
+@onready var slot2: Node3D = $Slot2
+@onready var slot3: Node3D = $Slot3
 
-@onready var interact_area = $Interact
-@onready var player = $"../Player"
-@onready var score_label = $"../CanvasGroup/ScoreLabel"
+@onready var interact_area: Area3D = $Interact
+@onready var player: Node3D = $"../Player"
+@onready var score_label: Label = $"../CanvasGroup/ScoreLabel"
+@onready var animation_player = $"Slot Machine Arm/AnimationPlayer"
 
 enum Symbol {
 	SEVEN,
@@ -15,10 +16,10 @@ enum Symbol {
 	BAR
 }
 
-@onready var slots = [
-	{"node": slot1, "spinning": false, "target_rotation": 0, "timer_running": false},
-	{"node": slot2, "spinning": false, "target_rotation": 0, "timer_running": false},
-	{"node": slot3, "spinning": false, "target_rotation": 0, "timer_running": false}
+@onready var slots: Array[Dictionary] = [
+	{"node": slot1, "spinning": false, "target_rotation": 0, "timer_running": false, "symbol": Symbol.SEVEN},
+	{"node": slot2, "spinning": false, "target_rotation": 0, "timer_running": false, "symbol": Symbol.SEVEN},
+	{"node": slot3, "spinning": false, "target_rotation": 0, "timer_running": false, "symbol": Symbol.SEVEN}
 ]
 
 var symbol_list: Array[Symbol] = [Symbol.SEVEN, Symbol.CHERRY, Symbol.BELL, Symbol.BAR, Symbol.CHERRY, Symbol.BELL, Symbol.BAR, Symbol.BELL]
@@ -28,7 +29,7 @@ var score: int = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if Input.is_action_just_pressed("interact") and interact_area.get_overlapping_bodies().has(player):
+	if Input.is_action_just_pressed("interact") and interact_area.get_overlapping_bodies().has(player) and slots_spinning <= 0:
 		roll_slots()
 
 	for slot in slots:
@@ -50,6 +51,8 @@ func _process(_delta):
 		slot.node.rotation.z = fposmod(slot.node.rotation.z, deg_to_rad(360))
 
 func roll_slots():
+	animation_player.play("slot_machine_arm")
+	
 	for slot in slots:
 		slot.spinning = true
 		slot.target_rotation = deg_to_rad(snappedf(randf()*360, 45))

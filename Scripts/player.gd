@@ -43,7 +43,7 @@ func _physics_process(delta):
 		velocity.y = jump_velocity
 	
 	# get direction input
-	var input_direction: Vector2 = Input.get_vector("right", "left", "down", "up")
+	var input_direction: Vector2 = Input.get_vector("left", "right", "up", "down")
 	var direction = (head.transform.basis * Vector3(input_direction.x, 0, input_direction.y)).normalized()
 	
 	# calculate movement velocity
