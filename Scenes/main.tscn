@@ -26,6 +26,12 @@ size = Vector3(7.921827, 2.1798935, 5.350606)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mqvok"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_adp6s"]
+font_size = 50
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+
 [node name="Main" type="Node3D" unique_id=1729802106]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=783859361]
@@ -74,3 +80,12 @@ air_control = 20.0
 
 [node name="Slot Machine" parent="." unique_id=1946949609 instance=ExtResource("3_8gbba")]
 transform = Transform3D(0.36373574, 0, 0, 0, 0.36373574, 0, 0, 0, 0.36373574, -8.045744, 2.1812258, -8.177565)
+
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=842416211]
+
+[node name="ScoreLabel" type="Label" parent="CanvasGroup" unique_id=1931437947]
+offset_left = 18.0
+offset_right = 218.0
+offset_bottom = 69.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_adp6s")
