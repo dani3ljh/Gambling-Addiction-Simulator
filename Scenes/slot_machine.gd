@@ -30,11 +30,11 @@ var score: int = 0
 func _process(_delta):
 	if Input.is_action_just_pressed("interact") and interact_area.get_overlapping_bodies().has(player):
 		roll_slots()
-	
+
 	for slot in slots:
 		if not slot.spinning:
 			continue
-		
+
 		if not slot.timer_running and abs(slot.node.rotation.z - slot.target_rotation) < 0.1:
 			slot.spinning = false
 			slot.node.rotation.z = snappedf(slot.node.rotation.z, deg_to_rad(45))
@@ -45,7 +45,7 @@ func _process(_delta):
 				score += score_result()
 				score_label.text = "Score: %s" % score
 			continue
-		
+
 		slot.node.rotate_z(-0.03)
 		slot.node.rotation.z = fposmod(slot.node.rotation.z, deg_to_rad(360))
 
@@ -54,11 +54,11 @@ func roll_slots():
 		slot.spinning = true
 		slot.target_rotation = deg_to_rad(snappedf(randf()*360, 45))
 		slot.timer_running = true
-	
+
 	slots_spinning = len(slots)
-	
+
 	await get_tree().create_timer(0.5).timeout
-	
+
 	for slot in slots:
 		slot.timer_running = false
 
@@ -73,5 +73,5 @@ func score_result() -> int:
 	for slot in slots:
 		if slot.symbol != symbol:
 			return 0
-	
+
 	return 100 if symbol == Symbol.SEVEN else 10
