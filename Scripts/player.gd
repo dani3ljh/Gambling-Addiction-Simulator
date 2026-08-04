@@ -12,7 +12,7 @@ extends CharacterBody3D
 @export var sprint_speed: float = 10
 @export var walk_speed: float = 5
 @export var acceleration: float = 60
-@export var air_control: float = 5
+@export var air_control: float = 20
 @export var air_resistance: float = 2
 
 @onready var head = $Head

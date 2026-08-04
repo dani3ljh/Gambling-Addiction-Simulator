@@ -1,13 +1,18 @@
 extends Node3D
 
+# slots
 @onready var slot1: Node3D = $Slot1
 @onready var slot2: Node3D = $Slot2
 @onready var slot3: Node3D = $Slot3
 
+# local objects
 @onready var interact_area: Area3D = $Interact
+@onready var animation_player = $"Slot Machine Arm/AnimationPlayer"
+
+# global objects
 @onready var player: Node3D = $"../Player"
 @onready var score_label: Label = $"../CanvasGroup/ScoreLabel"
-@onready var animation_player = $"Slot Machine Arm/AnimationPlayer"
+@onready var interact_label: Label = $"../CanvasGroup/InteractLabel"
 
 enum Symbol {
 	SEVEN,
@@ -27,9 +32,20 @@ var symbol_list: Array[Symbol] = [Symbol.SEVEN, Symbol.CHERRY, Symbol.BELL, Symb
 var slots_spinning: int = 0
 var score: int = 0
 
+func _ready():
+	interact_label.visible = false
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if Input.is_action_just_pressed("interact") and interact_area.get_overlapping_bodies().has(player) and slots_spinning <= 0:
+	# 0 degrees is facing negative z
+	var facing: Vector2 = Vector2(-sin(player.head.rotation.y), -cos(player.head.rotation.y))
+	var direction: Vector3 = player.position.direction_to(position)
+	var dot: float = facing.dot(Vector2(direction.x, direction.z))
+	
+	var is_interactable: bool = dot > 0 and slots_spinning <= 0 and interact_area.get_overlapping_bodies().has(player)
+	interact_label.visible = is_interactable
+	
+	if is_interactable and Input.is_action_just_pressed("interact"):
 		roll_slots()
 
 	for slot in slots:
@@ -50,7 +66,7 @@ func _process(_delta):
 		slot.node.rotate_z(-0.03)
 		slot.node.rotation.z = fposmod(slot.node.rotation.z, deg_to_rad(360))
 
-func roll_slots():
+func roll_slots():	
 	animation_player.play("slot_machine_arm")
 	
 	for slot in slots:

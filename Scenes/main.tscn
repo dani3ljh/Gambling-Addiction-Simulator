@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dil1aovsx7tof" path="res://Scenes/player.tscn" id="2_idj7w"]
 [ext_resource type="PackedScene" uid="uid://dto400tit5bg" path="res://Scenes/slot_machine.tscn" id="3_8gbba"]
 [ext_resource type="LabelSettings" uid="uid://cerwtvvilr15d" path="res://Materials/score_label_settings.tres" id="4_jjvhh"]
+[ext_resource type="LabelSettings" uid="uid://bbmrqsk3161ai" path="res://Materials/interact_label_settings.tres" id="5_kry3j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_idj7w"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -22,10 +23,13 @@ glow_enabled = true
 [sub_resource type="QuadMesh" id="QuadMesh_q87bt"]
 orientation = 1
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_bj4t2"]
-size = Vector3(7.921827, 2.1798935, 5.350606)
+[sub_resource type="BoxShape3D" id="BoxShape3D_adp6s"]
+size = Vector3(7.922, 1.9, 5.351)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mqvok"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bj4t2"]
+size = Vector3(7.922, 3.531, 5.351)
 
 [node name="Main" type="Node3D" unique_id=1729802106]
 
@@ -48,32 +52,32 @@ material_override = ExtResource("1")
 mesh = SubResource("QuadMesh_q87bt")
 
 [node name="Box" type="StaticBody3D" parent="." unique_id=144041345]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.012386, 0.5, -8.265583)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.012386, 0.95000005, -8.265583)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box" unique_id=1942860913]
-shape = SubResource("BoxShape3D_bj4t2")
+shape = SubResource("BoxShape3D_adp6s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Box" unique_id=1464871182]
-transform = Transform3D(7.921827, 0, 0, 0, 1, 0, 0, 0, 5.350606, 0, 0, 0)
+transform = Transform3D(7.922, 0, 0, 0, 1.9, 0, 0, 0, 5.351, 0, 0, 0)
 mesh = SubResource("BoxMesh_mqvok")
 
 [node name="Box2" type="StaticBody3D" parent="." unique_id=1449580435]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6467586, 1.0899467, -8.265583)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6467586, 1.7655, -8.265583)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box2" unique_id=272852699]
 shape = SubResource("BoxShape3D_bj4t2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Box2" unique_id=721215766]
-transform = Transform3D(7.921827, 0, 0, 0, 2.1798935, 0, 0, 0, 5.350606, 0, 0, 0)
+transform = Transform3D(7.922, 0, 0, 0, 3.531, 0, 0, 0, 5.351, 0, 0, 0)
 mesh = SubResource("BoxMesh_mqvok")
 
 [node name="Player" parent="." unique_id=777310218 instance=ExtResource("2_idj7w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Slot Machine" parent="." unique_id=1946949609 instance=ExtResource("3_8gbba")]
-transform = Transform3D(0.36373574, 0, 0, 0, 0.36373574, 0, 0, 0, 0.36373574, -8.045744, 2.1812258, -8.177565)
+transform = Transform3D(0.36373574, 0, 0, 0, 0.36373574, 0, 0, 0, 0.36373574, -8.045744, 3.532332, -8.177565)
 
 [node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=842416211]
 
@@ -87,3 +91,17 @@ grow_horizontal = 2
 text = "Score: 0"
 label_settings = ExtResource("4_jjvhh")
 horizontal_alignment = 1
+
+[node name="InteractLabel" type="Label" parent="CanvasGroup" unique_id=1449186368]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press E to interact"
+label_settings = ExtResource("5_kry3j")
+horizontal_alignment = 1
+vertical_alignment = 1
