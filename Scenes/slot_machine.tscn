@@ -2,13 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://oab5huchnm8q" path="res://Models/Slot Machine.glb" id="1_03c2u"]
 [ext_resource type="PackedScene" uid="uid://ittb5sdpq48f" path="res://Models/OctagonalPrism.glb" id="2_0ucjj"]
-[ext_resource type="Script" uid="uid://0iepvlu6ltw" path="res://Scenes/slot_machine.gd" id="2_pyjcy"]
+[ext_resource type="Script" uid="uid://0iepvlu6ltw" path="res://Scripts/slot_machine.gd" id="2_pyjcy"]
 [ext_resource type="Material" uid="uid://bcob8dc0xcngj" path="res://Materials/Slot Machine/slot_material1.tres" id="3_2rg1w"]
 [ext_resource type="Material" uid="uid://cng7hwvplram2" path="res://Materials/Slot Machine/slot_material2.tres" id="4_ab6dg"]
 [ext_resource type="Material" uid="uid://dptw8ri0f30fp" path="res://Materials/Slot Machine/slot_material3.tres" id="5_33385"]
 [ext_resource type="Material" uid="uid://d36m4st77n3g0" path="res://Materials/Slot Machine/slot_material4.tres" id="6_pyjcy"]
 [ext_resource type="PackedScene" uid="uid://b80qwne03ptlk" path="res://Scenes/slot_machine_arm.tscn" id="8_pxobf"]
-[ext_resource type="Animation" uid="uid://bukj8e7mvuet0" path="res://Animation/slot_machine_arm.res" id="9_jd2m2"]
+[ext_resource type="Animation" uid="uid://bukj8e7mvuet0" path="res://Animations/slot_machine_arm.res" id="9_jd2m2"]
+[ext_resource type="LabelSettings" uid="uid://bbmrqsk3161ai" path="res://Materials/interact_label_settings.tres" id="10_beykt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bj4t2"]
 size = Vector3(5.1950493, 6.8705444, 6.066641)
@@ -44,17 +45,32 @@ _data = {
 [node name="Slot Machine" unique_id=1946949609 instance=ExtResource("1_03c2u")]
 script = ExtResource("2_pyjcy")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="0" unique_id=1429138287]
+[node name="CanvasGroup" type="CanvasGroup" parent="." index="0" unique_id=830019734]
+
+[node name="InteractLabel" type="Label" parent="CanvasGroup" index="0" unique_id=1416344716]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press E to spin"
+label_settings = ExtResource("10_beykt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1429138287]
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=425771553]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.531311e-05, 3.43161, -0.13809872)
 shape = SubResource("BoxShape3D_bj4t2")
 
-[node name="Cube" parent="." index="1" unique_id=1367628041]
+[node name="Cube" parent="." index="2" unique_id=1367628041]
 transform = Transform3D(1.8738258, 0, 0, 0, 1, 0, 0, 0, 1.5073097, 0, 1.1089853, 0.8059516)
 
-[node name="Slot1" parent="." index="2" unique_id=575153686 instance=ExtResource("2_0ucjj")]
+[node name="Slot1" parent="." index="3" unique_id=575153686 instance=ExtResource("2_0ucjj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5001708, 0.17934394, 5.4232273, 0.7382598)
 metadata/_edit_group_ = true
 
@@ -98,7 +114,7 @@ transform = Transform3D(-3.171474e-08, 0.7133121, 0.7071068, 3.171474e-08, 0.713
 material_override = ExtResource("5_33385")
 mesh = SubResource("QuadMesh_20cm6")
 
-[node name="Slot2" parent="." index="3" unique_id=915885685 instance=ExtResource("2_0ucjj")]
+[node name="Slot2" parent="." index="4" unique_id=915885685 instance=ExtResource("2_0ucjj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5001708, 0.179, 5.423, 0)
 metadata/_edit_group_ = true
 
@@ -142,7 +158,7 @@ transform = Transform3D(-3.171474e-08, 0.7133121, 0.7071068, 3.171474e-08, 0.713
 material_override = ExtResource("5_33385")
 mesh = SubResource("QuadMesh_20cm6")
 
-[node name="Slot3" parent="." index="4" unique_id=272810858 instance=ExtResource("2_0ucjj")]
+[node name="Slot3" parent="." index="5" unique_id=272810858 instance=ExtResource("2_0ucjj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5001708, 0.179, 5.423, -0.738)
 metadata/_edit_group_ = true
 
@@ -186,14 +202,13 @@ transform = Transform3D(-3.171474e-08, 0.7133121, 0.7071068, 3.171474e-08, 0.713
 material_override = ExtResource("5_33385")
 mesh = SubResource("QuadMesh_20cm6")
 
-[node name="Interact" type="Area3D" parent="." index="5" unique_id=1922103831]
-collision_mask = 2
+[node name="Interact" type="Area3D" parent="." index="6" unique_id=1922103831]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interact" index="0" unique_id=513056321]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.266959, 0)
 shape = SubResource("CylinderShape3D_adp6s")
 
-[node name="Slot Machine Arm" parent="." index="6" unique_id=2020385602 instance=ExtResource("8_pxobf")]
+[node name="Slot Machine Arm" parent="." index="7" unique_id=2020385602 instance=ExtResource("8_pxobf")]
 transform = Transform3D(-7.7987625e-09, -0.17841488, 0, 0.17841488, -7.7987625e-09, 0, 0, 0, 0.17841488, 0, 5.0905232, -2.0873213)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Slot Machine Arm" index="2" unique_id=462749643]

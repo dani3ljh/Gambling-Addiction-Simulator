@@ -12,7 +12,7 @@ extends Node3D
 # global objects
 @onready var player: Node3D = $"../Player"
 @onready var score_label: Label = $"../CanvasGroup/ScoreLabel"
-@onready var interact_label: Label = $"../CanvasGroup/InteractLabel"
+@onready var interact_label: Label = $"CanvasGroup/InteractLabel"
 
 enum Symbol {
 	SEVEN,
@@ -32,6 +32,7 @@ var symbol_list: Array[Symbol] = [Symbol.SEVEN, Symbol.CHERRY, Symbol.BELL, Symb
 var slots_spinning: int = 0
 var score: int = 0
 
+# Called when the node enters the scene tree for the first time.
 func _ready():
 	interact_label.visible = false
 
