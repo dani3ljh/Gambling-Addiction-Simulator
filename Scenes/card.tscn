@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://mi47fxrctgn8"]
+
+[ext_resource type="Script" uid="uid://i84icvhac24f" path="res://Scenes/card.gd" id="1_0qqmn"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_fod6x"]
+
+[node name="Card" type="Node3D" unique_id=1787445220]
+script = ExtResource("1_0qqmn")
+
+[node name="Front" type="MeshInstance3D" parent="." unique_id=516062648]
+transform = Transform3D(0.364, 0, 0, 0, -1.13649605e-08, -1, 0, 0.26, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_fod6x")
+
+[node name="Back" type="MeshInstance3D" parent="." unique_id=556980187]
+transform = Transform3D(0.364, 0, 0, 0, 3.409488e-08, 1, 0, -0.26, 1.3113416e-07, 0, 0, 0)
+mesh = SubResource("QuadMesh_fod6x")

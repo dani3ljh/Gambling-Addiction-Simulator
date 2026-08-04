@@ -9,8 +9,6 @@ extends Node3D
 @onready var interact_label: Label = $CanvasGroup/InteractLabel
 @onready var not_coded_label = $NotCodedLabel
 
-@export var test: String
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	interact_label.visible = false

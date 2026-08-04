@@ -1,5 +1,7 @@
 extends Node3D
 
+@export var spin_speed: float
+
 # slots
 @onready var slot1: Node3D = $Slot1
 @onready var slot2: Node3D = $Slot2
@@ -35,9 +37,10 @@ var score: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	interact_label.visible = false
+	spin_speed = abs(spin_speed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(delta):
 	# 0 degrees is facing negative z
 	var facing: Vector2 = Vector2(-sin(player.head.rotation.y), -cos(player.head.rotation.y))
 	var direction: Vector3 = player.position.direction_to(position)
@@ -63,8 +66,9 @@ func _process(_delta):
 				score += score_result()
 				score_label.text = "Score: %s" % score
 			continue
-
-		slot.node.rotate_z(-0.03)
+		
+		# rotate slot downward
+		slot.node.rotate_z(-spin_speed * delta)
 		slot.node.rotation.z = fposmod(slot.node.rotation.z, deg_to_rad(360))
 
 func roll_slots():	
@@ -77,7 +81,7 @@ func roll_slots():
 
 	slots_spinning = len(slots)
 
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.75).timeout
 
 	for slot in slots:
 		slot.timer_running = false

@@ -44,6 +44,7 @@ _data = {
 
 [node name="Slot Machine" unique_id=1946949609 instance=ExtResource("1_03c2u")]
 script = ExtResource("2_pyjcy")
+spin_speed = 6.0
 
 [node name="CanvasGroup" type="CanvasGroup" parent="." index="0" unique_id=830019734]
 
@@ -67,7 +68,7 @@ metadata/_edit_group_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.531311e-05, 3.43161, -0.13809872)
 shape = SubResource("BoxShape3D_bj4t2")
 
-[node name="Cube" parent="." index="2" unique_id=1367628041]
+[node name="Cube" parent="." index="2" unique_id=1608785245]
 transform = Transform3D(1.8738258, 0, 0, 0, 1, 0, 0, 0, 1.5073097, 0, 1.1089853, 0.8059516)
 
 [node name="Slot1" parent="." index="3" unique_id=575153686 instance=ExtResource("2_0ucjj")]

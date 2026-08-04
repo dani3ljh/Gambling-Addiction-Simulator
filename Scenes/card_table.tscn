@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c2bs7ggss56q" path="res://Models/CardTable.glb" id="1_bi4qy"]
 [ext_resource type="LabelSettings" uid="uid://bbmrqsk3161ai" path="res://Materials/interact_label_settings.tres" id="2_4gm6i"]
+[ext_resource type="PackedScene" uid="uid://mi47fxrctgn8" path="res://Scenes/card.tscn" id="3_adudg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bj4t2"]
 size = Vector3(2.5556545, 1.0549045, 3.5915558)
@@ -27,19 +28,19 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Leg" parent="." index="1" unique_id=1325704261]
+[node name="Leg" parent="." index="1" unique_id=1734304506]
 transform = Transform3D(0.20274167, 0, 0, 0, 0.40025887, 0, 0, 0, 0.18438902, 0.8280136, 0.40155494, -1.3862159)
 
-[node name="Leg_001" parent="." index="2" unique_id=1453388024]
+[node name="Leg_001" parent="." index="2" unique_id=98807335]
 transform = Transform3D(0.20274167, 0, 0, 0, 0.40025887, 0, 0, 0, 0.18438902, -0.81444496, 0.40155494, 1.377864)
 
-[node name="Leg_002" parent="." index="3" unique_id=1232357336]
+[node name="Leg_002" parent="." index="3" unique_id=1360500294]
 transform = Transform3D(0.20274167, 0, 0, 0, 0.40025887, 0, 0, 0, 0.18438902, 0.8280136, 0.40155494, 1.377864)
 
-[node name="Leg_003" parent="." index="4" unique_id=2059820003]
+[node name="Leg_003" parent="." index="4" unique_id=549849813]
 transform = Transform3D(0.20274167, 0, 0, 0, 0.40025887, 0, 0, 0, 0.18438902, -0.81444496, 0.40155494, -1.3862159)
 
-[node name="Table" parent="." index="5" unique_id=950781832]
+[node name="Table" parent="." index="5" unique_id=894945617]
 transform = Transform3D(1.2776749, 0, 0, 0, 0.12649913, 0, 0, 0, 1.7956626, -0.006721452, 0.92831445, 0.0036674987)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="6" unique_id=1713392943]
@@ -49,6 +50,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0066862106, 0.52745223, 0.
 shape = SubResource("BoxShape3D_bj4t2")
 
 [node name="Interact" type="Area3D" parent="." index="7" unique_id=373744439]
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interact" index="0" unique_id=1246429859]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007156372, 0.8508949, -0.02684021)
@@ -58,3 +60,6 @@ shape = SubResource("BoxShape3D_mqvok")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.4444016, 0)
 visible = false
 text = "I lowk didn't code ts yet"
+
+[node name="Card" parent="." index="9" unique_id=1787445220 instance=ExtResource("3_adudg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.982, 0)
