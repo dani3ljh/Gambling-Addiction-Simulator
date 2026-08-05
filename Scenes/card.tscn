@@ -1,16 +1,19 @@
 [gd_scene format=3 uid="uid://mi47fxrctgn8"]
 
-[ext_resource type="Script" uid="uid://i84icvhac24f" path="res://Scenes/card.gd" id="1_0qqmn"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_fod6x"]
+[ext_resource type="Script" uid="uid://i84icvhac24f" path="res://Scripts/card.gd" id="1_0qqmn"]
+[ext_resource type="SpriteFrames" uid="uid://mvg76kkga8u6" path="res://Materials/Cards/cards.tres" id="2_wf8id"]
 
 [node name="Card" type="Node3D" unique_id=1787445220]
 script = ExtResource("1_0qqmn")
 
-[node name="Front" type="MeshInstance3D" parent="." unique_id=516062648]
-transform = Transform3D(0.364, 0, 0, 0, -1.13649605e-08, -1, 0, 0.26, -4.371139e-08, 0, 0, 0)
-mesh = SubResource("QuadMesh_fod6x")
+[node name="Front" type="AnimatedSprite3D" parent="." unique_id=1614638006]
+transform = Transform3D(-7.1468115e-08, 1.635, -7.1468115e-08, -2.858725e-07, -7.1468136e-08, -1.635, -1.635, -7.14681e-08, 2.858725e-07, 0, 0, 0)
+double_sided = false
+texture_filter = 0
+sprite_frames = ExtResource("2_wf8id")
 
-[node name="Back" type="MeshInstance3D" parent="." unique_id=556980187]
-transform = Transform3D(0.364, 0, 0, 0, 3.409488e-08, 1, 0, -0.26, 1.3113416e-07, 0, 0, 0)
-mesh = SubResource("QuadMesh_fod6x")
+[node name="Front2" type="AnimatedSprite3D" parent="." unique_id=1457314388]
+transform = Transform3D(-7.1468115e-08, 1.635, -7.146811e-08, 1.4293623e-07, 7.1468115e-08, 1.635, 1.635, 7.146811e-08, -1.4293623e-07, 0, 0, 0)
+double_sided = false
+texture_filter = 0
+sprite_frames = ExtResource("2_wf8id")

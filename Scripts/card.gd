@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var front: MeshInstance3D = $Front
+@onready var front: AnimatedSprite3D = $Front
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
