@@ -151,7 +151,7 @@ transform = Transform3D(7.922, 0, 0, 0, 0.5, 0, 0, 0, 5.351, 0, 0, 0)
 mesh = SubResource("BoxMesh_mqvok")
 
 [node name="CardTable" parent="." unique_id=92990351 instance=ExtResource("7_6bp64")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.522, 6.724906, 21.326456)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.237349, 6.1035156e-05, -3.1745434)
 
 [node name="Label3D" type="Label3D" parent="." unique_id=1623660684]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -5.4731517, 6.476728, 15.611655)

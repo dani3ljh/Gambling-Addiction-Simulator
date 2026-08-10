@@ -17,10 +17,10 @@ func _ready():
 	interact_label.visible = false
 	not_coded_label.visible = false
 	
-	for i in range(52):
-		var new_card = card.instantiate()
-		card_pile.add_child(new_card)
-		new_card.position = Vector3(0, i * 0.001, 0)
+	#for i in range(52):
+	var new_card = card.instantiate()
+	card_pile.add_child(new_card)
+	#new_card.position = Vector3(0, i * 0.001, 0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -5,7 +5,8 @@
 
 [node name="Card" type="Node3D" unique_id=1787445220]
 script = ExtResource("1_0qqmn")
-end_y = 0.123
+max_y = 0.123
+flip_time = 3.0
 
 [node name="Front" type="AnimatedSprite3D" parent="." unique_id=1614638006]
 transform = Transform3D(-7.1468115e-08, 1.635, -7.1468115e-08, -2.858725e-07, -7.1468136e-08, -1.635, -1.635, -7.14681e-08, 2.858725e-07, 0, 0, 0)
