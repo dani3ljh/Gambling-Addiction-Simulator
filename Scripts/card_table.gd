@@ -23,7 +23,7 @@ func _ready():
 	#new_card.position = Vector3(0, i * 0.001, 0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	# 0 degrees is facing negative z
 	var facing: Vector2 = Vector2(-sin(player.head.rotation.y), -cos(player.head.rotation.y))
 	var direction: Vector3 = player.position.direction_to(position)
